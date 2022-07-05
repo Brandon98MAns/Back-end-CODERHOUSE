@@ -2,10 +2,21 @@ const fs = require('fs')
 const express = require('express');
 const app = express();
 
+let productos = 
+    [
+        {"id": 1, "nombre": "Remera", "precio": 2600},
+        {"id": 2, "nombre": "Gorra", "precio": 600},
+        {"id": 3, "nombre": "Pantalon", "precio": 4600}
+    ];
 
-//Solicito traer productos. Envio mi array a la ruta especificada. 
+//Coloco un mensaje en pantalla principal
+app.get('/', (req,res) => {
+    res.send('<h1 style="color:blue;">Bienvenidos al servidor express</h1>')
+})
+
+//Agrego ruta Productos. Solicito traer productos. Envio mi array a la ruta especificada. 
 app.get('/productos', (req, res)=> {
-    res.send(fs.promises.readFile('productos.txt', 'utf-8'))
+    res.send(fs.promises.readFile(productos))    
 })
 
 /*let resultado = await fs.promises.readFile('prodcutos.txt', 'utf-8')
@@ -17,7 +28,7 @@ app.get('/productosRandom/:id', async (req, res) => {
     let id = Number(req.params.id-1); 
     //Leo mi archivo productos.txt.
     let result = await fs.promises.readFile('productos.txt', 'utf-8')
-    console.log(productos)
+    console.log(result)
     //Convierto mi array en string a un objeto.
     let productos = JSON.parse(result);
     let producto = buscarProducto(productos, id);
