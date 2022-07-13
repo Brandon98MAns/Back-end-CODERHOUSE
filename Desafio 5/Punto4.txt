@@ -1,0 +1,1 @@
+Elegi realizar el desafio con EJS porque es de sintaxis simple, veloz para pequeños proyectos como este y esta principalmente diseñado para trabajar con Node.js y Express. 
