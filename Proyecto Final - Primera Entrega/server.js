@@ -26,7 +26,7 @@ const chat1 = new Chat("messages.json");
 
 io.on("connection", socket => {
   const response = contenedor1.getAll();
-  console.log("Un cliente se ha conectado");
+  console.log("Usuario en Linea");
   socket.emit("messages", chat1.getAll());
   socket.emit("products", response)
 

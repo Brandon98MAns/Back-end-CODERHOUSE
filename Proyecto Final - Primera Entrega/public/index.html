@@ -10,42 +10,46 @@
 		/>
     <script src="/socket.io/socket.io.js"></script>
 		<link rel="stylesheet" href="css/style.css" />
-		<title>Websockets</title>
+		<title>Primer Desafio</title>
 	</head>
   <body>
+
+	<nav class="navbar navbar-light bg-light">
+		<a class="navbar-brand" href="#">
+		  <img src="https://w7.pngwing.com/pngs/638/516/png-transparent-fashion-t-shirt-casual-supera-rx-b-logo-cosmetics-fashion-logo.png" width="40" height="40" alt="">
+		Menu Navegacion
+		</a>
+	  </nav>
+
 		<section class="container">
 			<section class="row">
-				<h1 class="col-12 text-center my-3">
-					Websockets, Chat Colaborativo y EJS
-				</h1>
-
 				<form
 					action="/api/productos"
 					method="post"
 					class="col-8 offset-2 mb-4 box-shadow"
 				>
-					<h2 class="text-center mb-2">Ingrese un nuevo producto</h2>
+					<h2 class="mb-2">Ingrese un nuevo producto</h2>
 
 					<p>Nombre del producto:</p>
 					<input type="text" name="nombre" />
 
 					<p>Precio del producto:</p>
-					<input type="text" name="precio" />
+					<input type="number" name="precio" />
 
 					<p>Url de la imagen del producto:</p>
 					<input type="text" name="imagen" />
 
-					<p>Cantidad disponible del producto:</p>
-					<input type="text" name="cantidad" />
+					<p>Stock disponible del producto:</p>
+					<input type="number" name="cantidad" />
 
-					<button type="submit" class="btn btn-success col-4 offset-4">
-						Enviar
+					<button type="submit" class="btn btn-outline-dark col-4 offset-4">
+						Agregar
 					</button>
 				</form>
 
-				<table class="table table-sm table-striped table-bordered align-middle col-8 mb-4 text-center">
+				<table class="table table-sm table-striped table-bordered align-middle col-8 mb-10 mt-20 text-center">
           <thead>
-            <tr>
+            <tr class="font-style-bold"></tr>>
               <td>Nombre</td>
               <td>Precio</td>
               <td>Cantidad</td>
@@ -59,8 +63,8 @@
 					onsubmit="return addMessage()"
 					class="col-8 offset-2 mb-4 box-shadow"
 				>
-					<input type="email" id="usermail" placeholder="¿Cual es tu correo electronico?" />
-					<input type="text" id="text" placeholder="Cuentanos algo ..." />
+					<input type="text" id="usermail" placeholder="Nombre" />
+					<input type="text" id="text" placeholder="Comentario..." />
 					<button type="submit" class="btn btn-primary col-4 offset-4">
 						Enviar
 					</button>

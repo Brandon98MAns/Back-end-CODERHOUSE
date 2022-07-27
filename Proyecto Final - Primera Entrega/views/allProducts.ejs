@@ -1,6 +1,6 @@
 <%- include("partials/header", {tituloWeb: "Productos"}) -%>
 <%- include("partials/body") -%>
-	<h1 class="col-12 text-center">Lista de productos</h1>
+	<h1 class="col-12 text-center">Catalogo</h1>
 	<% response.forEach(element => { %>
 		<%- include("partials/product", {
 			nombre: element.nombre,
