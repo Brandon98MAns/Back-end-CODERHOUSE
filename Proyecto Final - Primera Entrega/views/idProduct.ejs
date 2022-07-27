@@ -1,0 +1,13 @@
+<%- include("partials/header", {tituloWeb: "Productos"}) -%>
+<%- include("partials/body") -%>
+  <% if(response) { %>
+    <h1 class="col-12 text-center">Lista de productos</h1>
+    <%- include("partials/product", {
+      nombre: response.nombre,
+      imagen: response.imagen,
+      precio: response.precio
+    }) %>
+  <% } else { %>
+    <h4 class="text-center">El producto con el id especificado no ha sido encontrado</h4>
+  <% } %>
+<%- include("partials/footer") -%>

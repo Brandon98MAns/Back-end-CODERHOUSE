@@ -1,0 +1,13 @@
+<%- include("partials/header", {tituloWeb: "Productos"}) -%>
+<%- include("partials/body") -%>
+  <% if(response) { %>
+    <h1 class="col-12 text-center">Producto agregado</h1>
+    <%- include("partials/product", {
+      nombre: response.nombre,
+      imagen: response.imagen,
+      precio: response.precio
+    }) %>
+  <% } else { %>
+    <h4 class="text-center">Alguno de los campos ha quedado sin rellenar</h4>
+  <% } %>
+<%- include("partials/footer") -%>
