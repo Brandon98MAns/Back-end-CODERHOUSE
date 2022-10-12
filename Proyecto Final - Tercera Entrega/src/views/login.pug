@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  - const titlePage = "Login";
+  include layout/head.pug
+  body 
+    h1 Iniciar sesión
+    form(action="/login" method="post")
+      input(type="email" name="username" placeholder="Email")
+      input(type="password" name="password" placeholder="Contraseña")
+      button(type="submit") Iniciar sesión
+    form(action="/redirect-signup" method="post") 
+      button(type="submit") Registrate

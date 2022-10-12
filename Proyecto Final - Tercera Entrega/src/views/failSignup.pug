@@ -1,0 +1,8 @@
+doctype html
+html(lang="en")
+  - const titlePage = "Fail Signup";
+  include layout/head.pug
+  body
+    h1 Error al intentar registrarse
+    form(action="/redirect-signup" method="post") 
+      button(type="submit") Volver

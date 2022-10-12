@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  - const titlePage = "Info";
+  include layout/head.pug
+  style
+    include styles/info.css
+  body
+    h1 Información de datos del proyecto
+    div(class="list-container")
+      ul 
+        li
+          h3 Argumentos de entrada.
+        li
+          h3 Nombre de la plataforma (sistema operativo).
+        li
+          h3 Versión de Node.js
+        li
+          h3 Memoria total reservada.
+        li
+          h3 Path de ejecución.
+        li
+          h3 Process id.
+        li
+          h3 Carpeta del proyecto.
+        li
+          h3 Numero de procesadores presentes del servidor
+      ul 
+        each item in lista
+          li
+            h3= item

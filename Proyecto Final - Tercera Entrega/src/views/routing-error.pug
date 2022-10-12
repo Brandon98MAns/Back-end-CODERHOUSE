@@ -1,0 +1,8 @@
+doctype html
+html(lang="en")
+  - const titlePage = "Error";
+  include layout/head.pug
+  body
+    h1 Error
+    form(action="/redirect-login" method="post") 
+      button(type="submit") Volver

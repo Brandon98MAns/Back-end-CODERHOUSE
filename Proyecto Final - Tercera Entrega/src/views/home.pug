@@ -1,0 +1,8 @@
+doctype html
+html(lang="en")
+  - const titlePage = "Home";
+  include layout/head.pug
+  body
+    h1 Hola, #{username} bienvenido al Inicio.
+    form(action="/logout", method="post") 
+      button(type="submit") Cerrar sesion
