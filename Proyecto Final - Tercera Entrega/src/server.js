@@ -1,46 +1,53 @@
 import express from "express";
-import cookieParser from "cookie-parser";
 import session from "express-session";
+import cookieParser from "cookie-parser";
 import passport from "passport";
-import router from "./routes/routes.js";
-import compression from "compression";
+import { error404 } from "./middlewares/middlewares.js";
+import flash from "connect-flash";
 
+export const app = express();
+import * as passportAuth from "./middlewares/auth.js";
 
-const app = express();
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.use("/imgs", express.static(`public/imgs`));
 
-app.use(compression());
+// <---------- Sessions ---------->
 
-const ageCookie = (minutes) => {
-	if (minutes === 1) {
-		return 60000;
-	} else {
-		return minutes * 60000;
-	}
-};
-
-app.use(cookieParser());
+app.use(cookieParser("secret"));
 app.use(
 	session({
 		secret: "secret",
 		resave: false,
 		saveUninitialized: false,
-		rolling: true,
-		cookie: {
-			maxAge: ageCookie(2),
-			secure: false,
-			httpOnly: false,
-		},
+		// cookie: { maxAge: 60000 * 5 },
 	})
 );
 
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+	res.locals.signupMessage = req.flash("signupMessage");
+	res.locals.signinMessage = req.flash("signinMessage");
+	next();
+});
+
+// <---------- Engine Pug ---------->
 
 app.set("view engine", ".pug");
 app.set("views", "./src/views");
 
+// <---------- Routes ---------->
+
+import { routerCart, routerProduct, router } from "./routes/index.js";
+
+app.use("/api/carrito", routerCart);
+app.use("/api/productos", routerProduct);
 app.use(router);
 
-export default app;
+// <---------- Servidor Error 404 ---------->
+
+app.use(error404);

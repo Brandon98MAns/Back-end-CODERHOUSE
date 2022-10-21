@@ -1,0 +1,14 @@
+- let titlePage = "Signin";
+include layout/index
+block content
+  main(class="p-2")
+    h1(class="text-center text-3xl mb-4") Bienvenido al Signin
+    form(action="/signin" method="post" class="flex flex-col w-min rounded mx-auto p-4 border border-blue-400 bg-blue-100")
+      if signinMessage
+        h6(class="text-base text-red-500 text-center") #{signinMessage}
+      label(for="email") Correo electronico: 
+      input(type="text" placeholder="Escribe tu correo electronico" name="email" class="border-2 border-blue-400 rounded pl-1 mb-2")
+      label(for="password") Contraseña: 
+      input(type="password" placeholder="Escribe tu contraseña" name="password" class="border-2 border-blue-400 rounded pl-1 mb-2")
+      button(type="submit" class="bg-blue-400 rounded text-white w-max px-5 py-2 mx-auto mt-2 font-semibold") Enviar
+      a(href="/signup" class="w-max px-5 py-1 mx-auto mt-2 font-semibold") Registrarse

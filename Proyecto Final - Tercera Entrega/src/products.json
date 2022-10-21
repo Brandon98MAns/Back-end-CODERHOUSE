@@ -1,0 +1,62 @@
+[
+	{
+		"nombre": "Zapatos",
+		"precio": 90500,
+		"imagen": "https://cdn2.iconfinder.com/data/icons/thesquid-ink-40-free-flat-icon-pack/64/nike-dunk-128.png",
+		"stock": 10,
+		"descripcion": "Descripción del producto",
+		"id": 1,
+		"timestamp": 1658620433153,
+		"code": "Zapatos1658620433153"
+	},
+	{
+		"nombre": "Camisetas",
+		"precio": 52000,
+		"imagen": "https://cdn2.iconfinder.com/data/icons/flat-jewels-icon-set/128/0011_T-Shirt.png",
+		"stock": 10,
+		"descripcion": "Descripción del producto",
+		"id": 2,
+		"timestamp": 1658620433153,
+		"code": "Camisetas1658620433153"
+	},
+	{
+		"nombre": "Pantalonetas",
+		"precio": 80000,
+		"imagen": "https://cdn3.iconfinder.com/data/icons/fitness-24/512/8-128.png",
+		"stock": 10,
+		"descripcion": "Descripción del producto",
+		"id": 3,
+		"timestamp": 1658620433153,
+		"code": "Pantalonetas1658620433153"
+	},
+	{
+		"nombre": "Medias",
+		"precio": 12400,
+		"imagen": "https://cdn3.iconfinder.com/data/icons/xmas-flat-set-version-two/512/Christmas_socks-128.png",
+		"stock": 10,
+		"descripcion": "Descripción del producto",
+		"id": 4,
+		"timestamp": 1658620433153,
+		"code": "Medias1658620433153"
+	},
+	{
+		"nombre": "Gorras",
+		"precio": 25000,
+		"imagen": "https://cdn3.iconfinder.com/data/icons/xi4dox/png/nike.png",
+		"stock": 10,
+		"descripcion": "Descripción del producto",
+		"id": 5,
+		"timestamp": 1658620433153,
+		"code": "Gorras1658620433153"
+	},
+	{
+		"nombre": "Gafas",
+		"precio": 12500,
+		"imagen": "https://cdn3.iconfinder.com/data/icons/geek-3/24/Deal_With_It_Glasses_pixel_geek_mame-128.png",
+		"stock": 10,
+		"descripcion": "Descripción del producto",
+		"id": 6,
+		"timestamp": 1658620433153,
+		"code": "Gafas1658620433153"
+	}
+]

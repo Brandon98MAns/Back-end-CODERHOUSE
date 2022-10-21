@@ -1,70 +1,52 @@
-import { fork } from "child_process";
-import os from "os";
-const numCPUs = os.cpus().length;
+import { User } from "../models/users.js";
+import { sendMailAdmin } from "../services/sendMails.js";
 
-export const getHome = (req, res) => {
-	res.render("home", { name: req.session.name });
+export const home = async (req, res) => {
+	if (req.user) {
+		const username = `${req.user.name.first} ${req.user.name.last}`;
+		const imageUser = req.user.image;
+		res.render("home", { dataUser: { img: imageUser, name: username } });
+	} else {
+		res.render("home", { dataUser: false });
+	}
 };
 
-// Login
-export const getLogin = (req, res) => {
+export const getSignin = (req, res) => {
 	if (req.isAuthenticated()) {
-		const { username } = req.user;
-		res.render("home", { username });
-	} else res.render("login");
+		res.redirect("/");
+	} else res.render("signin");
 };
 
-export const postLogin = (req, res) => {
-	const { username } = req.user;
-	res.render("home", { username });
+export const postSingin = (req, res) => {
+	res.redirect("/");
 };
 
-export const getFailLogin = (req, res) => res.render("failLogin");
-
-// Singup
 export const getSignup = (req, res) => res.render("signup");
 
-export const postSignup = (req, res) => {
-	const { username } = req.user;
-	res.render("home", { username });
+export const postSignup = async (req, res) => {
+	const dataUser = req.user;
+	sendMailAdmin(dataUser);
+	res.redirect("/");
 };
 
-export const getFailSignup = (req, res) => res.render("failSignup");
+export const getUser = (req, res) => {
+	if (req.user) {
+		const name = `${req.user.name.first} ${req.user.name.last}`;
+		const img = req.user.image;
+		const email = req.user.email;
+		const address = req.user.address;
+		const age = req.user.age;
+		const phone = req.user.phone;
 
-// Logout
-export const getLogout = (req, res) => {
-	req.logout((error) => {
-		if (error) next(error);
-	});
-	res.redirect("/login");
+		res.render("user", { dataUser: { img, name, email, address, age, phone } });
+	} else {
+		res.redirect("/");
+	}
 };
 
-// Info
-export const getInfo = (req, res) => {
-	let args = (process.argv.slice(2).length) <= 2 ? "Sin argumentos" : process.argv.slice(2);
-
-	const info = [
-		args, // Argumentos de entrada
-		process.platform, // Sistema operativo
-		process.version, // Version de Node
-		process.memoryUsage().rss, // Memoria total reservada
-		process.argv[0], // Path de ejecucion
-		process.pid, // Process ID
-		process.cwd(), // Carpeta del proyecto
-		numCPUs,// Numero de procesadores presentes del servidor
-	];
-	res.render("info", { lista: info });
-};
-
-
-// Api Random
-export const getApiRandom = (req, res) => {
-	const { cant } = req.query;
-	const forked = fork("./src/utils/apiRandom.js");
-	forked.send({ msg: "start", cant });
-	forked.on("message", (msg) => {
-		res.json({ msg });
+export const getLogout = async (req, res, next) => {
+	await req.logout((err) => {
+		if (err) return next(err);
+		res.redirect("/");
 	});
 };
-
-export const failRoute = (req, res) => res.status(404).render("routing-error");

@@ -1,0 +1,19 @@
+- let titlePage = "User Profile";
+include layout/index
+block content
+  header
+    nav
+      ul(class="flex justify-between p-3")
+        li 
+          a(href="/" class="bg-blue-400 rounded-md text-white hover:underline font-semibold p-1") Regresar al inicio
+        li 
+          a(href="/logout" class="font-semibold p-1 hover:underline") Cerrar sesion 
+  section(class="mx-auto p-7")
+    picture(class="block mx-auto my-6 w-max")
+      a(href="/imgs/" + dataUser.img target="_blank" rel="noopener noreferrer")
+        img(src="imgs/" + dataUser.img alt="Logo user")
+    h3(class="text-3xl text-center my-2") #{dataUser.name}
+    h4(class="text-xl my-3") Correo electronico: #{dataUser.email}
+    h4(class="text-xl my-3") Direccion : #{dataUser.address}
+    h4(class="text-xl my-3") Edad : #{dataUser.age}
+    h4(class="text-xl my-3") Telefono : +#{dataUser.phone}

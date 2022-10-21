@@ -1,60 +1,51 @@
 import { Router } from "express";
 import passport from "passport";
+
+// <----- Controllers ----->
 import {
-	getHome,
-	getLogin,
-	postLogin,
-	getFailLogin,
+	home,
+	getSignin,
 	getSignup,
-	postSignup,
-	getFailSignup,
+	postSingin,
 	getLogout,
-	getInfo,
-	getApiRandom,
-	failRoute,
+	postSignup,
+	getUser,
 } from "../controllers/controllers.js";
-import auth from "../middlewares/auth.js";
-import { logMethodsUrl, logUrlNoExists } from "../middlewares/logs.js";
 
-const router = Router();
+import { sendMailAdmin } from "../services/sendMails.js";
 
-router.all("*", logMethodsUrl);
+// <----- Middlewares ----->
+import { uploadFile, userLogged } from "../middlewares/middlewares.js";
 
-// Home
-router.get("/", auth, getHome);
+// <----- Utils ----->
+import { upload } from "../utils/upload.js";
 
-// Login
-router.get("/login", getLogin);
+export const router = Router();
+
+router.get("/", home);
+
+router.get("/signin", getSignin);
 router.post(
-	"/login",
-	passport.authenticate("login", { failureRedirect: "/faillogin" }),
-	postLogin
+	"/signin",
+	passport.authenticate("local-signin", {
+		failureRedirect: "/signin",
+		passReqToCallback: true,
+	}),
+	postSingin
 );
-router.get("/faillogin", getFailLogin);
 
-// Singup
 router.get("/signup", getSignup);
 router.post(
 	"/signup",
-	passport.authenticate("signup", { failureRedirect: "/failsignup" }),
+	upload.single("image"),
+	uploadFile,
+	passport.authenticate("local-signup", {
+		failureRedirect: "/signup",
+		passReqToCallback: true,
+	}),
 	postSignup
 );
-router.get("/failsignup", getFailSignup);
 
-// Redirect to login & signup
-router.post("/redirect-signup", (req, res) => res.redirect("/signup"));
-router.post("/redirect-login", (req, res) => res.redirect("/login"));
+router.get("/user", getUser);
 
-// Logout
-router.post("/logout", getLogout);
-
-// Info
-router.get("/info", getInfo);
-
-// Api Random
-router.get("/api/random", getApiRandom);
-
-// Fail route
-router.all("*", logUrlNoExists, failRoute);
-
-export default router;
+router.get("/logout", getLogout);
