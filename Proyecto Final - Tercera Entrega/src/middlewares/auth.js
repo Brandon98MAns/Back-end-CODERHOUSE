@@ -1,74 +1,66 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import { User } from "../models/users.js";
+import bcrypt from "bcrypt";
+import User from "../models/User.js";
+
+const isValidPassword = (user, password) =>
+	bcrypt.compareSync(password, user.password);
+const createHash = (password) =>
+	bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
 
 passport.use(
-	"local-signup",
+	"login",
+	new LocalStrategy((username, password, done) => {
+		User.findOne({ username }, (error, user) => {
+			if (error) return done(error);
+			if (!user)
+				return done(null, false, {
+					message: "Usuario y/o contraseña incorrectos",
+				});
+			if (!isValidPassword(user, password))
+				return done(null, false, {
+					message: "Usuario y/o contraseña incorrectos",
+				});
+			return done(null, user);
+		});
+	})
+);
+
+passport.use(
+	"signup",
 	new LocalStrategy(
 		{
-			usernameField: "email",
-			passwordField: "password",
 			passReqToCallback: true,
 		},
-		async (req, email, password, done) => {
-			const userExists = await User.findOne({ email });
-
-			if (userExists) {
-				return done(
-					null,
-					false,
-					req.flash("signupMessage", "El correo electronico ya esta en uso.")
-				);
-			} else {
-				const newUser = new User();
-				newUser.email = email;
-				newUser.password = newUser.encryptPassword(password);
-				newUser.name.first = req.body.firstname;
-				newUser.name.last = req.body.lastname;
-				newUser.address = req.body.address;
-				newUser.age = req.body.age;
-				newUser.phone = req.body.phone;
-				newUser.image = req.file.filename;
-
-				await newUser.save();
-				return done(null, newUser);
-			}
+		(req, username, password, done) => {
+			User.findOne({ username: username }, (error, user) => {
+				if (error)
+					return done(error, user, {
+						message: "Error al intentar registrar el usuario",
+					});
+				if (user) return done(null, false, { message: "El usuario ya existe" });
+				const newUser = { username, password: createHash(password) };
+				User.create(newUser, (error, userWithId) => {
+					if (error) {
+						return done(error, user, { message: "Error creando usuario" });
+					} else {
+						return done(null, userWithId, { message: "Usuario registrado" });
+					}
+				});
+			});
 		}
 	)
 );
 
-passport.use(
-	"local-signin",
-	new LocalStrategy(
-		{
-			usernameField: "email",
-			passwordField: "password",
-			passReqToCallback: true,
-		},
-		async (req, email, password, done) => {
-			const user = await User.findOne({ email });
-			if (!user) {
-				return done(
-					null,
-					false,
-					req.flash("signinMessage", "Usuario no encontrado.")
-				);
-			} else if (!user.comparePassword(password)) {
-				return done(
-					null,
-					false,
-					req.flash("signinMessage", "Contraseña incorrecta.")
-				);
-			} else {
-				return done(null, user);
-			}
-		}
-	)
-);
+passport.serializeUser((user, done) => done(null, user._id));
+passport.deserializeUser((id, done) => User.findById(id, done));
 
-passport.serializeUser((user, done) => done(null, user.id));
+const auth = (req, res, next) => {
+	if (req.isAuthenticated()) {
+		next();
+	} else {
+		res.redirect("/login");
+	}
+};
 
-passport.deserializeUser(async (id, done) => {
-	const user = await User.findById(id);
-	done(null, user);
-});
+export default auth;

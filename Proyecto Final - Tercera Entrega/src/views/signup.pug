@@ -1,29 +1,12 @@
-- let titlePage = "Register for new users";
-include layout/index
-block content 
-  main(class="p-2") 
-    h1(class="text-3xl text-center mb-4") Crear una cuenta nueva
-    form(action="/signup" enctype="multipart/form-data" method="post" id="formSignup" class="flex flex-col w-min rounded mx-auto p-4 border border-blue-400 bg-blue-100")
-      if signupMessage
-        h6(class="text-base text-red-500 text-center") #{signupMessage} 
-      label(for="email") Correo electronico:
-      input(type="email" name="email" class="border-2 border-blue-400 rounded pl-1 mb-2")
-      label(for="password") Contraseña: 
-      input(type="password" name="password" class="border-2 border-blue-400 rounded pl-1 mb-2")
-      label(for="firstname") Nombre:
-      input(type="text" name="firstname" class="border-2 border-blue-400 rounded pl-1 mb-2")
-      label(for="lastname") Apellido:
-      input(type="text" name="lastname" class="border-2 border-blue-400 rounded pl-1 mb-2")
-      label(for="address") Direccion:
-      input(type="text" name="address" class="border-2 border-blue-400 rounded pl-1 mb-2")
-      label(for="age") Edad:
-      input(type="number" name="age" class="border-2 border-blue-400 rounded pl-1 mb-2")
-      label(for="phone") Telefono:
-      input(type="tel" name="phone" id="phone" class="border-2 border-blue-400 rounded pl-1 mb-2")
-      label(for="image") Imagen:
-      input(type="file" name="image" class="mb-2")
-      button(type="submit" class="bg-blue-400 rounded text-white w-max px-5 py-2 mx-auto mt-2 font-semibold") Enviar
-      a(href="/signin" class="w-max px-5 py-1 mx-auto mt-2 font-semibold") Iniciar sesion
-  script(src="intl-tel/build/js/intlTelInput.min.js")
-  script(src="intl-tel/build/js/utils.js" loading="lazy") 
-  script(src="js/index.js") 
+doctype html
+html(lang="en")
+  - const titlePage = "Signup";
+  include layout/head.pug
+  body
+    h1 Registrate
+    form(action="/signup" method="post") 
+      input(type="email" name="username" placeholder="Email")
+      input(type="password" name="password" placeholder="Contraseña")
+      button(type="submit") Registrar usuario
+    form(action="/redirect-login", method="post")
+      button(type="submit") Iniciar sesión

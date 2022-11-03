@@ -1,1 +1,32 @@
-
+[2022-10-28T11:55:21.643] [ERROR] apis - TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+    at executeCmds (file:///C:/Users/JANUS%20PC/Desktop/michael/desarrollo/coder-house/backend/desafios-backend-coderhouse/40-arquitectura-servidor/src/services/executeCmds.js:11:15)
+    at file:///C:/Users/JANUS%20PC/Desktop/michael/desarrollo/coder-house/backend/desafios-backend-coderhouse/40-arquitectura-servidor/index.js:49:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:198:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:385:24)
+    at async loadESM (node:internal/process/esm_loader:88:5)
+    at async handleMainPromise (node:internal/modules/run_main:61:12)
+[2022-10-28T11:55:41.925] [ERROR] apis - TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+    at executeCmds (file:///C:/Users/JANUS%20PC/Desktop/michael/desarrollo/coder-house/backend/desafios-backend-coderhouse/40-arquitectura-servidor/src/services/executeCmds.js:11:15)
+    at file:///C:/Users/JANUS%20PC/Desktop/michael/desarrollo/coder-house/backend/desafios-backend-coderhouse/40-arquitectura-servidor/index.js:49:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:198:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:385:24)
+    at async loadESM (node:internal/process/esm_loader:88:5)
+    at async handleMainPromise (node:internal/modules/run_main:61:12)
+[2022-10-28T11:56:18.377] [ERROR] apis - TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+    at executeCmds (file:///C:/Users/JANUS%20PC/Desktop/michael/desarrollo/coder-house/backend/desafios-backend-coderhouse/40-arquitectura-servidor/src/services/executeCmds.js:11:15)
+    at file:///C:/Users/JANUS%20PC/Desktop/michael/desarrollo/coder-house/backend/desafios-backend-coderhouse/40-arquitectura-servidor/index.js:49:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:198:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:385:24)
+    at async loadESM (node:internal/process/esm_loader:88:5)
+    at async handleMainPromise (node:internal/modules/run_main:61:12)
+[2022-10-28T11:57:26.274] [ERROR] apis - TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+    at executeCmds (file:///C:/Users/JANUS%20PC/Desktop/michael/desarrollo/coder-house/backend/desafios-backend-coderhouse/40-arquitectura-servidor/src/services/executeCmds.js:11:15)
+    at file:///C:/Users/JANUS%20PC/Desktop/michael/desarrollo/coder-house/backend/desafios-backend-coderhouse/40-arquitectura-servidor/index.js:49:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:198:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:385:24)
+    at async loadESM (node:internal/process/esm_loader:88:5)
+    at async handleMainPromise (node:internal/modules/run_main:61:12)

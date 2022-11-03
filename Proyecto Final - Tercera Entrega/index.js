@@ -1,17 +1,16 @@
+import app from "./src/server.js";
 import mongoose from "mongoose";
-import { app } from "./src/server.js";
-import { logger, loggerError } from "./src/utils/logs.js";
+import { logger, loggerApis } from "./src/utils/apiLogs.js";
+import config from "./config.js";
+// import yargs from "yargs";
 import * as dotenv from "dotenv";
 dotenv.config();
 
-const PORT = process.env.PORT || 8080;
+const PORT = config.PORT || 8080;
 
-const server = app.listen(PORT, async () => {
-	await mongoose
-		.connect(process.env.MONGO_CONNECT)
-		.then((db) => logger.info("Base de datos conectada"))
-		.catch((err) => loggerError.error(err));
+const server = app.listen(PORT, () => {
+	mongoose.connect(process.env.MONGO_CONNECT);
 	logger.info(`Servidor HTTP escuchando en el puerto ${server.address().port}`);
 });
 
-server.on("error", (error) => loggerError.error(`Error en servidor ${error}`));
+server.on("error", (error) => loggerApis.error(`Error en servidor: ${error}`));

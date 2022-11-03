@@ -1,53 +1,56 @@
 import express from "express";
-import session from "express-session";
 import cookieParser from "cookie-parser";
+import session from "express-session";
 import passport from "passport";
-import { error404 } from "./middlewares/middlewares.js";
-import flash from "connect-flash";
+import compression from "compression";
+import cors from "cors";
+import config from "../config.js";
+import RouterPage from "./routes/routes.js";
+import RouterProducts from "./routes/products.js";
+import { logger } from "./utils/apiLogs.js";
 
-export const app = express();
-import * as passportAuth from "./middlewares/auth.js";
+const app = express();
 
-app.use(express.json());
+if (config.NODE_ENV === "development") app.use(cors());
+
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
-app.use("/imgs", express.static(`public/imgs`));
+app.use(express.json());
 
-// <---------- Sessions ---------->
+app.use(compression());
 
-app.use(cookieParser("secret"));
+const ageCookie = (minutes) => {
+	if (minutes === 1) {
+		return 60000;
+	} else {
+		return minutes * 60000;
+	}
+};
+
+app.use(cookieParser());
 app.use(
 	session({
 		secret: "secret",
 		resave: false,
 		saveUninitialized: false,
-		// cookie: { maxAge: 60000 * 5 },
+		rolling: true,
+		cookie: {
+			maxAge: ageCookie(2),
+			secure: false,
+			httpOnly: false,
+		},
 	})
 );
 
-app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use((req, res, next) => {
-	res.locals.signupMessage = req.flash("signupMessage");
-	res.locals.signinMessage = req.flash("signinMessage");
-	next();
-});
-
-// <---------- Engine Pug ---------->
 
 app.set("view engine", ".pug");
 app.set("views", "./src/views");
 
-// <---------- Routes ---------->
+const routerPage = new RouterPage();
+app.use("/", routerPage.start);
 
-import { routerCart, routerProduct, router } from "./routes/index.js";
+const routerProducts = new RouterProducts();
+app.use("/api/products", routerProducts.start());
 
-app.use("/api/carrito", routerCart);
-app.use("/api/productos", routerProduct);
-app.use(router);
-
-// <---------- Servidor Error 404 ---------->
-
-app.use(error404);
+export default app;

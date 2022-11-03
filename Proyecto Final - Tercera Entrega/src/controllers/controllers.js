@@ -1,52 +1,52 @@
-import { User } from "../models/users.js";
-import { sendMailAdmin } from "../services/sendMails.js";
+class ControllersPage {
 
-export const home = async (req, res) => {
-	if (req.user) {
-		const username = `${req.user.name.first} ${req.user.name.last}`;
-		const imageUser = req.user.image;
-		res.render("home", { dataUser: { img: imageUser, name: username } });
-	} else {
-		res.render("home", { dataUser: false });
-	}
-};
+	getHome = (req, res) => {
+		res.render("home", { name: req.session.name });
+	};
 
-export const getSignin = (req, res) => {
-	if (req.isAuthenticated()) {
-		res.redirect("/");
-	} else res.render("signin");
-};
+	// <----- Login ----->
+	getLogin = (req, res) => {
+		if (req.isAuthenticated()) {
+			const { username } = req.user;
+			res.render("home", { username });
+		} else res.render("login");
+	};
 
-export const postSingin = (req, res) => {
-	res.redirect("/");
-};
+	postLogin = (req, res) => {
+		const { username } = req.user;
+		res.render("home", { username });
+	};
 
-export const getSignup = (req, res) => res.render("signup");
+	getFailLogin = (req, res) => {
+		res.render("failLogin");
+	};
 
-export const postSignup = async (req, res) => {
-	const dataUser = req.user;
-	sendMailAdmin(dataUser);
-	res.redirect("/");
-};
+	// <----- Signup ----->
+	getSignup = (req, res) => {
+		res.render("signup");
+	};
 
-export const getUser = (req, res) => {
-	if (req.user) {
-		const name = `${req.user.name.first} ${req.user.name.last}`;
-		const img = req.user.image;
-		const email = req.user.email;
-		const address = req.user.address;
-		const age = req.user.age;
-		const phone = req.user.phone;
+	postSignup = (req, res) => {
+		const { username } = req.user;
+		res.render("home", { username });
+	};
 
-		res.render("user", { dataUser: { img, name, email, address, age, phone } });
-	} else {
-		res.redirect("/");
-	}
-};
+	getFailSignup = (req, res) => {
+		res.render("failSignup");
+	};
 
-export const getLogout = async (req, res, next) => {
-	await req.logout((err) => {
-		if (err) return next(err);
-		res.redirect("/");
-	});
-};
+	// <----- Logout ----->
+	getLogout = (req, res) => {
+		req.logout((error) => {
+			if (error) next(error);
+		});
+		res.redirect("/login");
+	};
+
+	// <----- Fail route ----->
+	failRoute = (req, res) => {
+		res.status(404).render("routing-error");
+	};
+}
+
+export default ControllersPage;

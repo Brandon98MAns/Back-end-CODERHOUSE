@@ -7,9 +7,9 @@ admin.initializeApp({
 });
 
 class Chat {
-	constructor(collection) {
+	constructor() {
 		const db = admin.firestore();
-		this.query = db.collection(collection);
+		this.query = db.collection("chat");
 	}
 
 	async getAll() {
@@ -29,7 +29,7 @@ class Chat {
 			}));
 			return result;
 		} catch (error) {
-			loggerApis.error(`Error en api: ${error}`)
+			loggerApis.error(`Error en api: ${error}`);
 		}
 	}
 
@@ -44,7 +44,7 @@ class Chat {
 				await doc.create(message);
 			}
 		} catch (error) {
-			loggerApis.error(`Error en api: ${error}`)
+			loggerApis.error(`Error en api: ${error}`);
 		}
 	}
 }

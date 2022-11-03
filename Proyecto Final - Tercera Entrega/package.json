@@ -1,7 +1,7 @@
 {
 	"name": "Tercera entrega proyecto final",
 	"version": "1.0.0",
-	"description": "Desafio entregable de la clase 32 del curso Programacion Backend en CoderHouse",
+	"description": "Desafio entregable del curso Programacion Backend en CoderHouse",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",

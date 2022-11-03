@@ -1,51 +1,55 @@
 import { Router } from "express";
 import passport from "passport";
+import ControllersPage from "../controllers/controllers.js";
+import auth from "../middlewares/auth.js";
+import { logMethodsUrl, logUrlNoExists } from "../middlewares/logs.js";
+import { logger } from "../utils/apiLogs.js";
 
-// <----- Controllers ----->
-import {
-	home,
-	getSignin,
-	getSignup,
-	postSingin,
-	getLogout,
-	postSignup,
-	getUser,
-} from "../controllers/controllers.js";
+const router = Router();
 
-import { sendMailAdmin } from "../services/sendMails.js";
+const controllersPage = new ControllersPage();
 
-// <----- Middlewares ----->
-import { uploadFile, userLogged } from "../middlewares/middlewares.js";
+class RouterPage {
+	constructor() {
+		this.controllerPage = new ControllersPage();
+	}
 
-// <----- Utils ----->
-import { upload } from "../utils/upload.js";
+	start() {
+		router.all("*", logMethodsUrl);
 
-export const router = Router();
+		// Home
+		router.get("/", auth, this.controllerPage.getHome);
 
-router.get("/", home);
+		// Login
+		router.get("/login", this.controllerPage.getLogin);
+		router.post(
+			"/login",
+			passport.authenticate("login", { failureRedirect: "/faillogin" }),
+			this.controllerPage.postLogin
+		);
+		router.get("/faillogin", this.controllerPage.getFailLogin);
 
-router.get("/signin", getSignin);
-router.post(
-	"/signin",
-	passport.authenticate("local-signin", {
-		failureRedirect: "/signin",
-		passReqToCallback: true,
-	}),
-	postSingin
-);
+		// Singup
+		router.get("/signup", this.controllerPage.getSignup);
+		router.post(
+			"/signup",
+			passport.authenticate("signup", { failureRedirect: "/failsignup" }),
+			this.controllerPage.postSignup
+		);
+		router.get("/failsignup", this.controllerPage.getFailSignup);
 
-router.get("/signup", getSignup);
-router.post(
-	"/signup",
-	upload.single("image"),
-	uploadFile,
-	passport.authenticate("local-signup", {
-		failureRedirect: "/signup",
-		passReqToCallback: true,
-	}),
-	postSignup
-);
+		// Redirect to login & signup
+		router.post("/redirect-signup", (req, res) => res.redirect("/signup"));
+		router.post("/redirect-login", (req, res) => res.redirect("/login"));
 
-router.get("/user", getUser);
+		// Logout
+		router.post("/logout", this.controllerPage.getLogout);
 
-router.get("/logout", getLogout);
+		// Fail route
+		router.all("*", logUrlNoExists, this.controllerPage.failRoute);
+
+		return router;
+	}
+}
+
+export default RouterPage;

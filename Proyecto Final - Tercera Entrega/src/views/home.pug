@@ -1,23 +1,8 @@
-- let titlePage = "Home";
-include layout/index
-block content
-  header
-    nav
-      ul(class="flex justify-between p-2")
-        if dataUser
-          li(class="mx-2 my-1")
-            a(href="#" class="hover:cursor-not-allowed") Todos los productos
-          div(class="flex")
-            li(class="mx-1 my-1")
-              a(href="/imgs/" + dataUser.img target="_blank" rel="noopener noreferrer")
-                img(src="imgs/" + dataUser.img alt="Logo user" class="rounded-full h-7")
-            li(class="mx-2 my-1")
-              a(href="/user") #{dataUser.name}
-            li(class="mx-2 my-1")
-              a(href="/logout" class="bg-blue-400 rounded-md text-white font-semibold p-1") Cerrar sesion 
-        else 
-          li(class="p-2")
-            a(href="/signin") Signin
-          li(class="mx-1 p-2")
-            a(href="/signup") Signup
-  h1(class="text-3xl text-center") Bienvenido al home
+doctype html
+html(lang="en")
+  - const titlePage = "Home";
+  include layout/head.pug
+  body
+    h1 Hola, #{username} bienvenido al Inicio.
+    form(action="/logout", method="post") 
+      button(type="submit") Cerrar sesion
