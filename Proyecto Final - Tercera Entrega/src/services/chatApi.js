@@ -1,5 +1,5 @@
 import Chat from "../DAO/chat.js";
-import { logger } from "../utils/apiLogs.js";
+import { logApp } from "../utils/apiLogs.js";
 
 class ChatApi {
 	constructor() {
@@ -13,7 +13,7 @@ class ChatApi {
 
 	async saveMessage(message) {
 		await this.chatDao.save(message);
-		logger.info("Mensaje guardado");
+		logApp.info("Mensaje guardado");
 	}
 }
 

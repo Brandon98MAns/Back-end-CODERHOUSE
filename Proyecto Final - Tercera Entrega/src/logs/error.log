@@ -30,3 +30,666 @@
     at async ESMLoader.import (node:internal/modules/esm/loader:385:24)
     at async loadESM (node:internal/process/esm_loader:88:5)
     at async handleMainPromise (node:internal/modules/run_main:61:12)
+[2022-11-07T11:12:40.104] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:15:12.823] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:15:41.281] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:16:09.968] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:17:06.663] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:17:33.872] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:18:34.230] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:19:08.470] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:20:52.140] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:21:27.325] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:21:46.099] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:24:50.339] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}
+[2022-11-07T11:25:10.313] [ERROR] apis - Error agregando un nuevo producto Error: products validation failed: stock: Path `stock` is required., price: Path `price` is required., name: Path `name` is required.
+    at ValidationError.inspect (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\error\validation.js:50:26)
+    at formatValue (node:internal/util/inspect:782:19)
+    at inspect (node:internal/util/inspect:347:10)
+    at formatWithOptionsInternal (node:internal/util/inspect:2167:40)
+    at Object.format (node:internal/util/inspect:2021:10)
+    at basicLayout (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\layouts.js:65:52)
+    at app (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\appenders\file.js:98:23)
+    at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:43:5
+    at Array.forEach (<anonymous>)
+    at sendLogEventToAppender (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\log4js\lib\log4js.js:42:21) {
+  errors: {
+    stock: ValidatorError: Path `stock` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'stock',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    price: ValidatorError: Path `price` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaNumber.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'price',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    },
+    name: ValidatorError: Path `name` is required.
+        at validate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1346:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\schematype.js:1330:7)
+        at C:\Users\JANUS PC\Desktop\michael\desarrollo\coder-house\backend\desafios-backend-coderhouse\42-testeo-funcionalidades\node_modules\mongoose\lib\document.js:2877:18
+        at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'name',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'products validation failed'
+}

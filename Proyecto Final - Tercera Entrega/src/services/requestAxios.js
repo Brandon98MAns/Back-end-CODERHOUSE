@@ -1,5 +1,5 @@
 import axios from "axios";
-import { logger } from "../utils/apiLogs.js";
+import { logApp } from "../utils/apiLogs.js";
 
 const URL_BASE = "http://localhost:8080/api/products";
 
@@ -7,10 +7,10 @@ async function getProducts() {
 	axios
 		.get(`${URL_BASE}`)
 		.then((response) => {
-			logger.info(response);
+			logApp.info(response);
 		})
 		.catch((error) => {
-			logger.info(error);
+			logApp.info(error);
 		});
 }
 

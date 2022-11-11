@@ -1,6 +1,6 @@
 import admin from "firebase-admin";
 import ServiceAccount from "../../chat-con-websockets-firebase-adminsdk-creee-50dba0557a.json" assert { type: "json" };
-import { loggerApis } from "../utils/apiLogs";
+import { logError } from "../utils/apiLogs";
 
 admin.initializeApp({
 	credential: admin.credential.cert(ServiceAccount),
@@ -29,7 +29,7 @@ class Chat {
 			}));
 			return result;
 		} catch (error) {
-			loggerApis.error(`Error en api: ${error}`);
+			logError.error(`Error en api: ${error}`);
 		}
 	}
 
@@ -44,7 +44,7 @@ class Chat {
 				await doc.create(message);
 			}
 		} catch (error) {
-			loggerApis.error(`Error en api: ${error}`);
+			logError.error(`Error en api: ${error}`);
 		}
 	}
 }

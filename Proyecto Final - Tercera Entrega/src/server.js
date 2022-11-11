@@ -6,8 +6,12 @@ import compression from "compression";
 import cors from "cors";
 import config from "../config.js";
 import RouterPage from "./routes/routes.js";
-import RouterProducts from "./routes/products.js";
-import { logger } from "./utils/apiLogs.js";
+import mongoose from "mongoose";
+import { logApp, logError } from "./utils/apiLogs.js";
+import { graphqlHTTP } from "express-graphql";
+import { graphqlSchema, root } from "./models/Graphql.js";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 
@@ -47,10 +51,23 @@ app.use(passport.session());
 app.set("view engine", ".pug");
 app.set("views", "./src/views");
 
+app.use(
+	"/graphql",
+	graphqlHTTP({
+		schema: graphqlSchema,
+		rootValue: root,
+		// graphiql: true,
+	})
+);
+
 const routerPage = new RouterPage();
-app.use("/", routerPage.start);
+app.use("/", routerPage.start());
 
-const routerProducts = new RouterProducts();
-app.use("/api/products", routerProducts.start());
+const PORT = config.PORT;
 
-export default app;
+const server = app.listen(PORT, () => {
+	mongoose.connect(process.env.MONGO_CONNECT);
+	logApp.info(`Servidor HTTP escuchando en el puerto ${server.address().port}`);
+});
+
+server.on("error", (error) => logError.error(`Error en servidor: ${error}`));

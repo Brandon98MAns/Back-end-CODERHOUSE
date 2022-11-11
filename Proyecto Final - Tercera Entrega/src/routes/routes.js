@@ -3,11 +3,9 @@ import passport from "passport";
 import ControllersPage from "../controllers/controllers.js";
 import auth from "../middlewares/auth.js";
 import { logMethodsUrl, logUrlNoExists } from "../middlewares/logs.js";
-import { logger } from "../utils/apiLogs.js";
 
 const router = Router();
 
-const controllersPage = new ControllersPage();
 
 class RouterPage {
 	constructor() {
